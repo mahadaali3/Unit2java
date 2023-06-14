@@ -1,64 +1,68 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+class Cupcake{
+    public double price;
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void type(){
+        System.out.println("A basic, generic cupcake, with vanilla frosting");
+    }
+
+
+}
+
+
+class RedVelvet extends Cupcake{
+    public void type(){
+        System.out.println("A red velvet based cupcake, with cream cheese frosting.");
+    }
+}
+
+class Chocolate extends Cupcake{
+    public void type(){
+        System.out.println("A chocolate based cupcake, with chocolate frosting.");
+    }
+}
+
+class Drink{
+    public double price;
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void type(){
+        System.out.println("A bottle of water");
+    }
+}
+
+class Soda extends Drink {
+    public void type(){
+        System.out.println("A bottle of soda");
+    }
+}
+
+class Milk extends Drink {
+    public void type(){
+        System.out.println("A bottle of milk");
+    }
+}
 public class Main {
     public static void main(String[] args) {
-        class Cupcake{
-            public double price;
 
-            public double getPrice() {
-                return price;
-            }
-
-            public void setPrice(double price) {
-                this.price = price;
-            }
-
-            public void type(){
-                System.out.println("A basic, generic cupcake, with vanilla frosting");
-            }
-
-
-        }
-        class RedVelvet extends Cupcake{
-            public void type(){
-                System.out.println("A red velvet based cupcake, with cream cheese frosting.");
-            }
-        }
-
-        class Chocolate extends Cupcake{
-            public void type(){
-                System.out.println("A chocolate based cupcake, with chocolate frosting.");
-            }
-        }
-
-        class Drink{
-            public double price;
-
-            public double getPrice() {
-                return price;
-            }
-
-            public void setPrice(double price) {
-                this.price = price;
-            }
-
-            public void type(){
-
-            }
-        }
-
-        class Soda extends Drink {
-            public void type(){
-                System.out.println("A bottle of soda");
-            }
-        }
-
-        class Milk extends Drink {
-            public void type(){
-                System.out.println("A bottle of milk");
-            }
-        }
 
         ArrayList<Cupcake> cupcakeMenu = new ArrayList<Cupcake>();
         Cupcake cupcake = new Cupcake();
@@ -97,6 +101,7 @@ public class Main {
         Soda soda = new Soda();
         Milk milk = new Milk();
 
+
         System.out.println("We are deciding on the price for our water. Here is the description:");
         System.out.println("A bottle of water.");
         System.out.println("How much would you like to charge for the water? (Input a numerical number taken to 2 decimal places)");
@@ -121,7 +126,10 @@ public class Main {
         drinkMenu.add(water);
         drinkMenu.add(soda);
         drinkMenu.add(milk);
-        
+
+        new Order(cupcakeMenu, drinkMenu);
+
+
 
 
 
